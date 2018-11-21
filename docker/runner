@@ -1,2 +1,5 @@
 #!/bin/bash
-/hey-apm -base-url=${BASE_URL} -run ${DURATION:=30s} -endpoint=${ENDPOINT:=/intake/v2/events} -header 'Authorization: Bearear ${SECRET_TOKEN}' -c {$NUMBER_OF_AGENTS:=1}
+AGENTS=${NUMBER_OF_AGENTS:=1}
+THE_ENDPOINT=${ENDPOINT:=/intake/v2/events}
+THE_DURATION=${DURATION:=30s}
+/hey-apm -base-url=${BASE_URL} -run ${THE_DURATION} -endpoint=${THE_ENDPOINT} -header 'Authorization: Bearear ${SECRET_TOKEN}' -c $AGENTS
