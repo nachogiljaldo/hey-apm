@@ -3,4 +3,4 @@ AGENTS=${NUMBER_OF_AGENTS:=1}
 THE_ENDPOINT=${ENDPOINT:=/intake/v2/events}
 THE_DURATION=${DURATION:=30s}
 Q=${QPS:=0}
-/hey-apm -base-url=${BASE_URL} -run ${THE_DURATION} -endpoint=${THE_ENDPOINT} -header 'Authorization: Bearear ${SECRET_TOKEN}' -c $AGENTS -q $Q
+/hey-apm -base-url=${BASE_URL} -run ${THE_DURATION} -endpoint=${THE_ENDPOINT} -header "Authorization: Bearer ${SECRET_TOKEN}" -c $AGENTS -q $Q
